@@ -1,18 +1,15 @@
 extends KinematicBody2D
 
 var motionSpeed = 150
+var target = Vector2()
+var velocity = Vector2()
 
-func _ready():
-	pass
+func _input(event):
+	if event.is_action("left_click"):
+		target = get_global_mouse_position()
 
 func _physics_process(delta):
-	
-	var motion = Vector2()
-	
-	motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	
-	motion = motion.normalized() * motionSpeed
-	
-	move_and_slide(motion)
-
+	velocity = (target - position).normalized() * motionSpeed
+	# rotation = velocity.angle()
+	if (target - position).length() > 5:
+		velocity = move_and_slide(velocity)
