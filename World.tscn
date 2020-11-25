@@ -103,3 +103,6 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
