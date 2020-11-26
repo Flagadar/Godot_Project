@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/troll.png" type="Texture" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/grass_water_bg.png" type="Texture" id=3]
 [ext_resource path="res://assets/grass_flower.png" type="Texture" id=4]
 [ext_resource path="res://assets/grass_water_sm.png" type="Texture" id=5]
@@ -90,19 +89,6 @@ cell_size = Vector2( 256, 128 )
 format = 1
 tile_data = PoolIntArray( -327679, 3, 0, -327678, 3, 0, -327677, 3, 0, -327676, 3, 0, -262144, 3, 0, -262143, 3, 0, -262142, 2, 0, -262141, 3, 0, -262140, 3, 0, -262139, 3, 0, -196608, 3, 0, -196607, 1, 0, -196606, 0, 0, -196605, 3, 0, -196604, 4, 0, -196603, 3, 0, -196602, 3, 0, -131072, 4, 0, -131071, 3, 0, -131070, 3, 0, -131069, 3, 0, -131068, 3, 0, -131067, 2, 0, -131066, 3, 0, -131065, 3, 0, -65536, 3, 0, -65535, 2, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 0, 0, -65530, 3, 0, -65529, 3, 0, 0, 3, 0, 1, 0, 0, 2, 3, 0, 3, 3, 0, 4, 1, 0, 5, 3, 0, 6, 3, 0, 7, 3, 0, 8, 2, 0, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 65539, 4, 0, 65540, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 3, 0, 65544, 2, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 1, 0, 131078, 3, 0, 131079, 3, 0, 131080, 2, 0, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 196614, 3, 0, 196615, 3, 0 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 508.475, 326.636 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Player" parent="." instance=ExtResource( 1 )]
 
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( -0.475342, -0.778595 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
+[editable path="Player"]
