@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/troll.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/grass_water_sm.png" type="Texture" id=5]
 [ext_resource path="res://assets/grass_plain.png" type="Texture" id=6]
 [ext_resource path="res://assets/grass_dirt.png" type="Texture" id=7]
+[ext_resource path="res://assets/rock1.png" type="Texture" id=8]
+[ext_resource path="res://Stone.gd" type="Script" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "grass_water_bg.png 0"
@@ -80,6 +82,12 @@
 4/shapes = [  ]
 4/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 24.5751 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 26, 13 )
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -106,3 +114,23 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 2 )
+
+[node name="Stone" type="StaticBody2D" parent="."]
+modulate = Color( 0.956863, 0.933333, 0.933333, 1 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone"]
+position = Vector2( 434, 238 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Stone"]
+modulate = Color( 0.85098, 0.796078, 0.796078, 1 )
+position = Vector2( 449, 236.5 )
+scale = Vector2( 1.83721, 1.81395 )
+texture = ExtResource( 8 )
+[connection signal="mouse_entered" from="Stone" to="Stone" method="_on_Stone_mouse_entered"]
+[connection signal="mouse_exited" from="Stone" to="Stone" method="_on_Stone_mouse_exited"]
