@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/troll.png" type="Texture" id=2]
 [ext_resource path="res://assets/grass_water_bg.png" type="Texture" id=3]
 [ext_resource path="res://assets/grass_flower.png" type="Texture" id=4]
@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/grass_plain.png" type="Texture" id=6]
 [ext_resource path="res://assets/grass_dirt.png" type="Texture" id=7]
 [ext_resource path="res://assets/rock1.png" type="Texture" id=8]
-[ext_resource path="res://Stone.gd" type="Script" id=9]
+[ext_resource path="res://scripts/Stone.gd" type="Script" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "grass_water_bg.png 0"
